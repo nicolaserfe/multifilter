@@ -1,0 +1,51 @@
+function printArr(arr) {
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] % 2 !== 0) {
+				console.log(arr[i]);
+			}
+		}
+	}
+	//printArr([1, 2, 3, 4, 5]);
+	function average(arr) {
+		var sum = 0;
+		var count = 0;
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] % 2 !== 0) {
+				sum = sum + arr[i];
+				count = count + 1;
+			}
+		}
+		var res = sum / count;
+		return res;
+	}
+	var r = average([1, 2, 3, 4, 5]);
+	console.log(isMagicNumber(115132219018763992565095597973971522401));
+
+	function contaisMagicNumber(arr) {
+		for (var i = 0; i < arr.length; i++) {
+			if (isMagicNumber(arr[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function isMagicNumber(number) {
+		var chisla = numbers(number);
+		var result = 0;
+		for (var i = 0; i < chisla.length; i++) {
+			result = result + Math.pow(chisla[i], chisla.length);
+		}
+		return result === number;
+	}
+
+	function numbers(num) {
+		var result = [];
+		while (num > 0) {
+			var number = num % 10;
+			result.push(number);
+			num = (num - number) / 10;
+		}
+		return result;
+		var test = function () {};
+	}
